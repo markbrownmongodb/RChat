@@ -16,6 +16,7 @@ struct ContentView: View {
     @AppStorage("onlineUserReminderHours") var onlineUserReminderHours = 8.0
     
     @State private var userID: String?
+    @State private var isFirstLogin: Bool = true
 
     var body: some View {
         NavigationStack {
@@ -26,7 +27,8 @@ struct ContentView: View {
                             .environment(\.realmConfiguration,
                                           app.currentUser!.flexibleSyncConfiguration())
                     } else {
-                        LoginView(userID: $userID)
+                        LoginView(userID: $userID, isFirstLogin: isFirstLogin)
+                            .task { isFirstLogin = false }
                     }
                     Spacer()
                     if let error = state.error {

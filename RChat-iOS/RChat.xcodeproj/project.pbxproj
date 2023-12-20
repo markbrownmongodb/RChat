@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -784,7 +784,7 @@
 				CODE_SIGN_ENTITLEMENTS = RChat/RChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RChat/Preview Content\"";
-				DEVELOPMENT_TEAM = CV5PJSAH7N;
+				DEVELOPMENT_TEAM = KR2C2S892P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
@@ -808,7 +808,7 @@
 				CODE_SIGN_ENTITLEMENTS = RChat/RChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RChat/Preview Content\"";
-				DEVELOPMENT_TEAM = CV5PJSAH7N;
+				DEVELOPMENT_TEAM = KR2C2S892P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.3;

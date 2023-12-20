@@ -23,6 +23,7 @@ struct LoginView: View {
     @State private var newUser = false
     
     @FocusState private var focussedField: Field?
+    let isFirstLogin: Bool
     
     var body: some View {
         ZStack {
@@ -55,6 +56,15 @@ struct LoginView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 focussedField = .username
             }
+            let autoEmail: String = UserDefaults.standard.string(forKey: "username") ?? ""
+            let autoPassword: String = UserDefaults.standard.string(forKey: "password") ?? ""
+            let isAppetize: Bool = UserDefaults.standard.bool(forKey: "isAppetize")
+
+            if isFirstLogin && isAppetize && !autoEmail.isEmpty && !autoPassword.isEmpty {
+                email = autoEmail
+                password = autoPassword
+                userAction()
+            }
         }
         .padding()
     }
@@ -86,7 +96,7 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewColorScheme(PreviewOrientation(
-            LoginView(userID: .constant("1234554321"))
+            LoginView(userID: .constant("1234554321"), isFirstLogin: false)
                 .environmentObject(AppState())
         ))
     }
